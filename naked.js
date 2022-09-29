@@ -1,5 +1,5 @@
 
-const elementList = "h1 h2 h3 h4 h5 h6 p div em meta br script html head title a style aside section u i abbr address input area article code form kbd li ul ol nav header span".split(" ");
+const elementList = "h1 h2 h3 h4 h5 h6 p img div em meta br script html head title a style aside section u i abbr address input area article code form kbd li ul ol nav header span".split(" ");
 
 let elementsPseudoStyle = [];
 
@@ -17,18 +17,33 @@ for (let element of elementList) {
                 `
             );
             break;
-        case "script":
+        case "img":
             elementsPseudoStyle.push(
                 `
                     ${element}::before {
-                        content: "<${element} src='"attr(sr)"'>";
+                        content: "<${element} src='"attr(src)"'>";
                     }
                     ${element}::after {
-                        content: "</${element}>"
+                        content: "/>"
                     }
                 `
             );
             break;
+
+        case "script":
+            elementsPseudoStyle.push(
+                `
+                    ${element}::before {
+                        content: "<${element} src='"attr(src)"'>";
+                    }
+                    ${element}::after {
+                        content: "<script/>"
+                    }
+                `
+            );
+            break;
+
+
         case "br":
             elementsPseudoStyle.push(
                 `
