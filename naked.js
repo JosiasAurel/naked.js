@@ -1,5 +1,5 @@
 
-const elementList = "h1 h2 h3 h4 h5 h6 p em meta br script html head title a style aside section u i abbr address input area article code form kbd li ul ol nav header span".split(" ");
+const elementList = "h1 h2 h3 h4 h5 h6 p div em meta br script html head title a style aside section u i abbr address input area article code form kbd li ul ol nav header span".split(" ");
 
 let elementsPseudoStyle = [];
 
